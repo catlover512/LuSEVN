@@ -12,10 +12,10 @@ class StockTransaction extends Model
     protected $fillable = [
         'user_id',
         'stock_id',
-        'transaction_type',
-        'quantity',
         'price',
-        'total',
+        'quantity',
+        'type',
+        'closed_at',
     ];
 
     // Quan hệ với Stock

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Transaction;
+use App\Models\Wallet;
+use App\Models\WalletTransaction;
 use Illuminate\Http\Request;
 
-class TransactionController extends Controller
+class WalletTransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +35,7 @@ class TransactionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Transaction $transaction)
+    public function show(WalletTransaction $wallettransaction)
     {
         //
     }
@@ -42,7 +43,7 @@ class TransactionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Transaction $transaction)
+    public function edit(WalletTransaction $wallettransaction)
     {
         //
     }
@@ -50,7 +51,7 @@ class TransactionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Transaction $transaction)
+    public function update(Request $request, WalletTransaction $wallettransaction)
     {
         //
     }
@@ -58,7 +59,7 @@ class TransactionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Transaction $transaction)
+    public function destroy(WalletTransaction $wallettransaction)
     {
         //
     }

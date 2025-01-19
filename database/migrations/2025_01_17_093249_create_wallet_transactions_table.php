@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('transactions', function (Blueprint $table) {
+        Schema::create('wallet_transaction', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['deposit', 'withdraw', 'transfer']);
+            $table->unsignedBigInteger('user_id');
             $table->decimal('amount', 15, 2);
-            $table->decimal('balance_after', 15, 2);
-            $table->foreignId('recipient_id')->nullable()->constrained('users')->onDelete('cascade'); // Nếu là chuyển tiền
+            $table->string('type'); // 'deposit', 'withdraw', 'transfer'
+            $table->string('details')->nullable(); // Mô tả chi tiết
             $table->timestamps();
         });
     }

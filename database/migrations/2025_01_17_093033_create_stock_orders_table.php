@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('stock_orders', function (Blueprint $table) {
             $table->id();
+            $table->boolean('State')->default(false);
             $table->foreignId('stock_id')->constrained()->onDelete('cascade');
             $table->decimal('old_price', 10, 2);
             $table->decimal('new_price', 10, 2);

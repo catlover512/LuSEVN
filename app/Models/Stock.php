@@ -10,9 +10,13 @@ class Stock extends Model
     use HasFactory;
 
     protected $fillable = [
-        'symbol',
         'name',
-        'current_price',
+        'symbol',
+        'price',
+        'unit',
+        'type',
+        'open_time',
+        'close_time',
     ];
 
     // Quan hệ với StockOrder

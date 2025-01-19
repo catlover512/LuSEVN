@@ -11,18 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stocks', function (Blueprint $table) {
+        Schema::create('wallets', function (Blueprint $table) {
             $table->id();
-            $table->string('symbol')->unique();
-            $table->string('name');
-            $table->decimal('current_price', 10, 2);
-            $table->string('unit');
-            $table->string('type');
-            $table->time('open_time');
-            $table->time('close_time');
+            $table->unsignedBigInteger('user_id');
+            $table->decimal('balance', 15, 2)->default(0); // Số dư ví
+            $table->decimal('bonds', 15, 2)->default(0);   // Trái phiếu điện tử
             $table->timestamps();
         });
-        
     }
 
     /**
@@ -30,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('wallets');
     }
 };
